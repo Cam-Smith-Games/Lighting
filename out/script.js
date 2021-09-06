@@ -37,7 +37,10 @@ $("#input")
 function toHex(num) {
     let n = Math.round(num);
     let hex = n.toString(16);
-    return hex == "0" ? "00" : hex;
+    if (hex.length < 2) {
+        hex = "0" + hex;
+    }
+    return hex;
 }
 /** draws gradient with given coordinates and radius */
 function drawGradient(x, y, radius) {
